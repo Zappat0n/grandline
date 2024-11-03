@@ -1,0 +1,15 @@
+services:
+  database: &database
+    image: mysql:8.4.2
+    command: "--character-set-server=utf8mb4
+    --collation-server=utf8mb4_unicode_ci
+    --sql-mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'"
+    volumes:
+      - ./mysql:/var/lib/mysql
+    ports:
+      - "4000:3306"
+    environment:
+      MYSQL_DATABASE: grandline_development
+      MYSQL_ROOT_PASSWORD: grandline
+      MYSQL_USER: grandline
+      MYSQL_PASSWORD: grandline
