@@ -38,3 +38,6 @@
 
 # Ignore secrets file
 /.kamal/secrets
+
+# Ignore node modules
+/node_modules
