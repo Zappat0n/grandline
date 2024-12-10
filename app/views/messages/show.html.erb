@@ -1,0 +1,19 @@
+<div class="messages container screen-size my-5" style="width: 50%;" data-controller="messages">
+  <%= render CardComponent.new do |card| %>
+    <% card.with_header do %>
+      <h1>Conversation with <%= receiver.username %></h1>
+    <% end %>
+
+    <% card.with_body do %>
+      <div>
+        <div id="messagesContainer" data-messages-target="container">
+          <%= render partial: "messages/message", collection: messages %>
+        </div>
+      </div>
+    <% end %>
+
+    <% card.with_footer do %>
+      <%= render "messages/form", receiver: receiver %>
+    <% end %>
+  <% end %>
+</div>
