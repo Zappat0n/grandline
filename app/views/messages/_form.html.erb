@@ -1,4 +1,7 @@
-<%= form_with(model: Message.new, local: true, id: "new-message", class: "footer-chat d-flex flex-row align-items-center") do |form| %>
+<%= form_with(
+      url: messages_path,
+      id: "new-message",
+      class: "footer-chat d-flex flex-row align-items-center") do |form| %>
   <%= form.hidden_field :receiver_id, value: receiver.id %>
   <%= form.text_area :content, data: { "messages-target" => "textArea" } %>
   <%= form.button(type: :submit) do %>

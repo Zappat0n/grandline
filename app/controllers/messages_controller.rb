@@ -2,9 +2,12 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    message = current_user.messages.create!(message_params)
+    @message = current_user.messages.create!(message_params)
+    publish_message(@message)
 
-    publish_message(message)
+    respond_to do |format|
+      format.turbo_stream
+    end
   end
 
   def index
@@ -28,6 +31,6 @@ class MessagesController < ApplicationController
   end
 
   def message_params
-    params.require(:message).permit(:content, :receiver_id)
+    params.permit(:content, :receiver_id)
   end
 end
