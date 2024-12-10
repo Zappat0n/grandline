@@ -21,15 +21,24 @@ export default class extends Controller {
         // Called when the subscription has been terminated by the server
       },
 
+      getCookie(name) {
+        const value = `; ${document.cookie}`
+        const parts = value.split(`; ${name}=`)
+        if (parts.length === 2) return parts.pop().split(';').shift()
+      },
+
+
       received(data) {
         console.log("Received data from the chat channel!", data)
-        const container = document.querySelector('#messagesContainer')
 
-        if (container) {
-          container.insertAdjacentHTML( 'beforeend', data.html );
+        if (this.getCookie("user_id") != parseInt(data.user_id)) {
+          const container = document.querySelector('#messagesContainer')
+
+          if (container) {
+            container.insertAdjacentHTML( 'beforeend', data.html );
+          }
         }
       }
     });
-
   }
 }
