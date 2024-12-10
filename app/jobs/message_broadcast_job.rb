@@ -2,12 +2,11 @@ class MessageBroadcastJob < ApplicationJob
   queue_as :default
 
   def perform(message)
-    return
     message = Message.find(message.id)
     ActionCable.server.broadcast(
-      "message_channel",
+      message.channel_name,
       {
-        html: ApplicationController.new.render_to_string(partial: "messages/message", locals: { message: message })
+        html: ApplicationController.new.render_to_string(partial: "messages/message", locals: { message: message, user: message.user })
       }
     )
   end

@@ -21,6 +21,7 @@ export default class extends Controller {
       },
 
       received(data) {
+        console.log("Received data from the chat channel!", data)
         const container = document.querySelector('#messagesContainer')
 
         if (container) {
