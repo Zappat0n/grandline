@@ -1,3 +1,4 @@
+<%= turbo_stream.append "messagesContainer", partial: "messages/message", locals: { message: @message, user: current_user } %>
 <%= turbo_stream.update "content" do %>
   <script>
       document.getElementById('content').value = '';
