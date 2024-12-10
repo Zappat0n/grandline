@@ -1,0 +1,19 @@
+<div class="container mt-5" data-controller="messages">
+  <%= render CardComponent.new do |card| %>
+    <% card.with_header do %>
+      <h1>Messages#index</h1>
+    <% end %>
+
+    <% card.with_body do %>
+      <% if messages.present? %>
+        <ul>
+          <% messages.each do |message| %>
+            <li><%= message.content %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>No messages yet.</p>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
