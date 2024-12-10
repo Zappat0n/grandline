@@ -40,7 +40,10 @@ gem "thruster", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+gem "dartsass-rails", "~> 0.5.1"
 gem "devise", "~> 4.9"
+gem "view_component", "~> 3.20"
+
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -49,6 +52,8 @@ group :development, :test do
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
 
+  gem "lookbook", "~> 2.3.4"
+  gem "listen", "~> 3.9"
   gem "rspec-rails", "~> 7.1.0"
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]

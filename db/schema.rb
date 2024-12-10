@@ -10,25 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2024_11_03_234839) do
+ActiveRecord::Schema[8.1].define(version: 2024_12_07_174527) do
+  create_table "contacts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "contact_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contact_id"], name: "index_contacts_on_contact_id"
+    t.index ["user_id"], name: "index_contacts_on_user_id"
+  end
+
   create_table "messages", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "content", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "deleted_at"
+    t.bigint "receiver_id"
     t.index ["deleted_at"], name: "index_messages_on_deleted_at"
+    t.index ["receiver_id"], name: "fk_rails_67c67d2963"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "phone", null: false
+    t.string "name"
+    t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "deleted_at"
+    t.string "email"
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "username"
     t.index ["deleted_at"], name: "index_users_on_deleted_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "contacts", "users"
+  add_foreign_key "contacts", "users", column: "contact_id"
   add_foreign_key "messages", "users"
+  add_foreign_key "messages", "users", column: "receiver_id"
 end

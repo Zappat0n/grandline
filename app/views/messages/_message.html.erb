@@ -1,0 +1,17 @@
+<% if current_user == message.user %>
+  <div class="message text-only">
+    <div class="response">
+      <p class="text"><%= message.content %></p>
+      <p class="time"><%= time_to_display(message.created_at) %></p>
+    </div>
+  </div>
+<% else %>
+  <div class="message text">
+    <div class="photo" style="background-image: url(<%= asset_path 'grandline.webp' %>);"></div>
+    <div>
+      <p class="text"><%= message.content %></p>
+      <p class="time"><%= time_to_display(message.created_at) %></p>
+    </div>
+  </div>
+<% end %>
+

@@ -23,5 +23,6 @@ module Grandline
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.view_component.preview_paths << "#{Rails.root}/app/components_previews/"
   end
 end
