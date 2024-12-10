@@ -19,8 +19,9 @@ class MessagesController < ApplicationController
   def show
     user = User.find(params[:id])
     render locals: {
-      receiver: user,
-      messages: current_user.conversation_with(user)
+      room_name: Message.room_name(current_user.id, user.id),
+      messages: current_user.conversation_with(user),
+      receiver: user
     }
   end
 

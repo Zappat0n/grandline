@@ -1,5 +1,5 @@
 class MessageChannel < ApplicationCable::Channel
   def subscribed
-    stream_from "message_channel"
+    stream_from params[:room_name]
   end
 end

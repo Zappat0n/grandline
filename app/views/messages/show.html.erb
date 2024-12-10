@@ -1,4 +1,7 @@
-<div class="messages container screen-size my-5" style="width: 50%;" data-controller="messages">
+<div class="messages container screen-size my-5"
+     style="width: 50%;"
+     data-controller="messages"
+     data-messages-room-value=<%= room_name %>>
   <%= render CardComponent.new do |card| %>
     <% card.with_header do %>
       <h1>Conversation with <%= receiver.username %></h1>

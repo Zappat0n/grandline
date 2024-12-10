@@ -4,6 +4,7 @@ import consumer from "channels/consumer"
 // Connects to data-controller="messages"
 export default class extends Controller {
   static targets = ["container", "textArea"]
+  static values = { room: String }
 
   connect() {
     this.createActionCableChannel()
@@ -11,7 +12,7 @@ export default class extends Controller {
   }
 
   createActionCableChannel() {
-    return consumer.subscriptions.create("MessageChannel", {
+    return consumer.subscriptions.create({channel: "MessageChannel", room_name: this.roomValue }, {
       connected() {
         console.log("Connected to the chat channel!")
       },
