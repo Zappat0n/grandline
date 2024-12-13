@@ -42,6 +42,7 @@ gem "thruster", require: false
 
 gem "dartsass-rails", "~> 0.5.1"
 gem "devise", "~> 4.9"
+gem "faraday", "~> 2.12"
 gem "view_component", "~> 3.20"
 
 
