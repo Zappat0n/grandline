@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $1 <environment>"
+    exit 1
+fi
+
+ejson --keydir=./config/keys encrypt "config/secrets/$1.ejson"
+
+echo "Encrypted config/secrets/$1.ejson"

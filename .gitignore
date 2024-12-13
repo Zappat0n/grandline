@@ -30,8 +30,10 @@
 
 /public/assets
 
-# Ignore master key for decrypting credentials and more.
+# Ignore keys for decrypting credentials and more.
 /config/master.key
+/config/keys/*
+/config/secrets/*.json
 
 # Ignore idea files
 /.idea
