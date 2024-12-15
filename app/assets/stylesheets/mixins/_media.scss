@@ -1,5 +1,0 @@
-@mixin media($query) {
-  @if $query == lg {
-    @media (min-width: 992px) { @content; }
-  }
-}

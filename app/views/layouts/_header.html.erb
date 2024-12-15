@@ -14,9 +14,8 @@
         <%= link_to 'Sign In', new_user_session_path, class: "btn btn-primary ms-5" %>
       <% end %>
     </div>
-
   </div>
 </nav>
 
 <%= simple_format(notice, class: "notice") if notice %>
-<%= simple_format(alert, class: alert) if alert %>
+<%= simple_format(alert, class: "alert") if alert %>
