@@ -17,7 +17,7 @@
           <div class="field text-center mb-3">
             <%= f.label :password %>
             <% if @minimum_password_length %>
-              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <em><%= t(".password_length", count: @minimum_password_length) %></em>
             <% end %><br />
             <%= f.password_field :password, autocomplete: "new-password", class: "underline w-75" %>
           </div>
@@ -28,7 +28,7 @@
           </div>
 
           <div class="actions text-center">
-            <%= f.submit "Sign up", class: "btn btn-primary w-75 mx-auto" %>
+            <%= f.submit t("devise.shared.sign_up"), class: "btn btn-primary w-75 mx-auto" %>
           </div>
         <% end %>
 

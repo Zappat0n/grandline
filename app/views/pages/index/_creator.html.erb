@@ -1,17 +1,17 @@
 <%= render CardComponent.new do |card| %>
   <%= card.with_header do %>
-    <h3 class="text-center mb-0"><%= "Created by" %></h3>
+    <h3 class="text-center mb-0"><%= t("pages.index.created_by.headline") %></h3>
   <% end %>
 
   <%= card.with_body do %>
-    <p>Angel Luis Barros Pazos</p>
+    <p><%= t("pages.index.created_by.body") %></p>
 
     <div class="d-flex">
-      <%= link_to "https://github.com/Zappat0n" do %>
+      <%= link_to "https://github.com/Zappat0n", target: "_blank", rel: "nofollow" do %>
         <%= image_tag "icons/github.svg", width: 24, height: 24, alt: "GitHub" %>
       <% end %>
 
-      <%= link_to "https://www.linkedin.com/in/angel-barros/", class: "ms-2" do %>
+      <%= link_to "https://www.linkedin.com/in/angel-barros/", class: "ms-2", target: "_blank", rel: "nofollow" do %>
         <%= image_tag "icons/linkedin.svg", width: 24, height: 24, alt: "LinkedIn" %>
       <% end %>
     </div>
