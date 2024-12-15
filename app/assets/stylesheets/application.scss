@@ -8,10 +8,11 @@
 
 // Configuration
 @import "config/alerts";
+@import "config/buttons";
 
 // Components
 @import "components/card_on_top";
 @import "components/error_message";
+@import "components/inputs";
 @import "components/messages";
 @import "components/visually_hidden";
-

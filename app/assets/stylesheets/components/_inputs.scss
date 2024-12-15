@@ -1,0 +1,18 @@
+@import "config/variables";
+
+input {
+  &.underline {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid $green-300;
+    color: $green-600;
+    transition: border-color 0.3s;
+    &:focus,
+    &:active {
+      border: none;
+      border-bottom: 2px solid $green-300;
+    }
+  }
+}
+
+

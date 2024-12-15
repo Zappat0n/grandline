@@ -1,38 +1,39 @@
-<div class="mx-auto mt-5">
+<div class="mx-auto w-25 mt-5">
   <%= render CardComponent.new do |card| %>
     <% card.with_header do %>
-      <h2>Sign up</h2>
+      <h2 class="text-center mb-0">Sign up</h2>
     <% end %>
 
     <% card.with_body do %>
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="text-center">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
 
-        <div class="field">
-          <%= f.label :username %><br />
-          <%= f.text_field :username, autofocus: true %>
-        </div>
+          <div class="field text-center my-3">
+            <%= f.label :username %><br />
+            <%= f.text_field :username, autofocus: true, class: "underline w-75" %>
+          </div>
 
-        <div class="field">
-          <%= f.label :password %>
-          <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "new-password" %>
-        </div>
+          <div class="field text-center mb-3">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "new-password", class: "underline w-75" %>
+          </div>
 
-        <div class="field">
-          <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-        </div>
+          <div class="field text-center mb-3">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "underline w-75" %>
+          </div>
 
-        <div class="actions">
-          <%= f.submit "Sign up" %>
-        </div>
-      <% end %>
+          <div class="actions text-center">
+            <%= f.submit "Sign up", class: "btn btn-primary w-75 mx-auto" %>
+          </div>
+        <% end %>
+
+        <%= render "devise/shared/links" %>
       </div>
-
-      <%= render "devise/shared/links" %>
     <% end %>
   <% end %>
 </div>
