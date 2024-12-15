@@ -4,20 +4,19 @@
 @import "mixins/media";
 
 // Configuration
-@import "config/variables";
+@import "config/alerts";
 @import "config/reset";
+@import "config/variables";
+
+// Custom Bootstrap variables
+@import "custom_bootstrap";
+
+// Bootstrap
+@import "bootstrap";
 
 // Components
-@import "components/btn";
-@import "components/card";
+@import "components/card_on_top";
 @import "components/error_message";
-@import "components/link";
 @import "components/messages";
-@import "components/nav";
 @import "components/visually_hidden";
 
-// Layouts
-@import "layouts/container";
-@import "layouts/header";
-
-@import "bootstrap";

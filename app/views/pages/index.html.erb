@@ -1,6 +1,16 @@
-<h1>Pages#index</h1>
-
-<% if current_user %>
-  <%= link_to "Messages", messages_path %>
-  <%= link_to "Contacts", contacts_path %>
-<% end %>
+<div class="container w-75 mt-5 mx-auto">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-3 bg-white">
+      <%= render "pages/index/what_is_this" %>
+    </div>
+    <div class="col"></div>
+  </div>
+  <div class="row">
+    <div class="col-5"></div>
+    <div class="col-4 card-on-top">
+      <%= render "pages/index/creator" %>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>

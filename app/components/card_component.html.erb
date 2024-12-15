@@ -1,11 +1,17 @@
 <div class="card">
-  <div class="card-header">
-    <%= header %>
-  </div>
+  <% if header %>
+    <div class="card-header">
+      <%= header %>
+    </div>
+  <% end %>
   <div class="card-body">
-    <%= body %>
+    <div class="card-text">
+      <%= body %>
+    </div>
   </div>
-  <div class="card-footer">
-    <%= footer %>
-  </div>
+  <% if footer %>
+    <div class="card-footer">
+      <%= footer %>
+    </div>
+  <% end %>
 </div>

@@ -1,0 +1,10 @@
+@import "custom_bootstrap";
+
+.notice {
+  background-color: $primary;
+  border: 1px solid #e0e0e0;
+  color: white;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
