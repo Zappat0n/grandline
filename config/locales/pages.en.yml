@@ -1,0 +1,10 @@
+en:
+  pages:
+    index:
+      created_by:
+        body: Angel Luis Barros Pazos
+        headline: Created by
+      what_is_this:
+        body: This is just another page to test different AI models and possible implementations.
+        headline: What is this?
+
