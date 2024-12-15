@@ -5,7 +5,6 @@
 }
 
 * {
-  margin: 0;
   padding: 0;
 }
 
@@ -22,7 +21,6 @@ body {
   background-color: var(--color-background);
   color: var(--color-text-body);
   line-height: var(--line-height-body);
-  font-family: var(--font-family-sans);
 }
 
 img,
@@ -65,14 +63,4 @@ h4 {
   font-size: var(--font-size-l);
 }
 
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-  transition: color 200ms;
 
-  &:hover,
-  &:focus,
-  &:active {
-    color: var(--color-primary-rotate);
-  }
-}

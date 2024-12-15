@@ -1,0 +1,9 @@
+<%= render CardComponent.new do |card| %>
+  <%= card.with_header do %>
+    <h3 class="text-center mb-0"><%= "What is this?" %></h3>
+  <% end %>
+
+  <%= card.with_body do %>
+    <p>This is just another page to test different AI models and possible implementations.</p>
+  <% end %>
+<% end %>
