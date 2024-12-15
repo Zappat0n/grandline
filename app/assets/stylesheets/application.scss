@@ -1,13 +1,13 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css");
 
-// Configuration
-@import "config/alerts";
-
 // Custom Bootstrap variables
-@import "custom_bootstrap";
+@import "config/variables";
 
 // Bootstrap
 @import "bootstrap";
+
+// Configuration
+@import "config/alerts";
 
 // Components
 @import "components/card_on_top";
