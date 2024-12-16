@@ -1,5 +1,6 @@
 <% if user == message.user %>
   <div class="message text-only">
+    <%= render AvatarComponent.new(user: message.user) %>
     <div class="response">
       <p class="text"><%= message.content %></p>
       <p class="time"><%= time_to_display(message.created_at) %></p>

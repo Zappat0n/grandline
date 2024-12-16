@@ -4,13 +4,15 @@
       <h1>Messages#index</h1>
     <% end %>
 
-    <% card.with_body do %>
+    <% card.with_list do %>
       <% if messages.present? %>
-        <ul>
-          <% messages.each do |message| %>
-            <li><%= message.content %></li>
-          <% end %>
-        </ul>
+        <% messages.each do |message| %>
+          <li class="list-group-item clearfix m-1">
+            <%= link_to message_path(message.other_user(current_user)) do %>
+              <%= render MessageComponent.new(message: message, user: current_user, index_message: true) %>
+            <% end %>
+          </li>
+        <% end %>
       <% else %>
         <p>No messages yet.</p>
       <% end %>

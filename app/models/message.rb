@@ -12,4 +12,8 @@ class Message < ApplicationRecord
   def room_name
     Message.room_name(user_id, receiver_id)
   end
+
+  def other_user(current_user)
+    user == current_user ? receiver : user
+  end
 end
