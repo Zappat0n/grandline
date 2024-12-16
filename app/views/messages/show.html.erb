@@ -1,16 +1,15 @@
-<div class="messages container screen-size my-5"
-     style="width: 50%;"
+<div class="container screen-size w-50 mt-1"
      data-controller="messages"
      data-messages-room-value=<%= room_name %>>
   <%= render CardComponent.new do |card| %>
     <% card.with_header do %>
-      <h1>Conversation with <%= receiver.username %></h1>
+      <h1 class="text-center fs-3 mb-0">Conversation with <%= receiver.username %></h1>
     <% end %>
 
     <% card.with_body do %>
       <div>
-        <div id="messagesContainer" data-messages-target="container">
-          <%= render partial: "messages/message", collection: messages, locals: { user: current_user } %>
+        <div id="messagesContainer" class="messages" data-messages-target="container">
+          <%= render partial: "messages/message", collection: messages %>
         </div>
       </div>
     <% end %>

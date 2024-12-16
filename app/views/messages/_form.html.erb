@@ -3,8 +3,10 @@
       id: "new-message",
       class: "footer-chat d-flex flex-row align-items-center") do |form| %>
   <%= form.hidden_field :receiver_id, value: receiver.id %>
-  <%= form.text_area :content, data: { "messages-target" => "textArea" } %>
-  <%= form.button(type: :submit) do %>
-    <i class="icon send fa-regular fa-paper-plane clickable" aria-hidden="true"></i>
+  <%= form.text_area :content,
+                     class: "form-control",
+                     data: { "messages-target" => "textArea" } %>
+  <%= form.button(type: :submit, class: "border-0 rounded-5 ms-2 p-2 bg-white") do %>
+    <i class="fa-regular fa-paper-plane fa-2x color-secondary" aria-hidden="true"></i>
   <% end %>
 <% end %>

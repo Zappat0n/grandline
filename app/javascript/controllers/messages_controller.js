@@ -8,6 +8,7 @@ export default class extends Controller {
 
   connect() {
     this.createActionCableChannel()
+    this.containerTarget.scrollTop = this.containerTarget.scrollHeight
     this.textAreaTarget.focus()
   }
 
@@ -35,7 +36,8 @@ export default class extends Controller {
           const container = document.querySelector('#messagesContainer')
 
           if (container) {
-            container.insertAdjacentHTML( 'beforeend', data.html );
+            container.insertAdjacentHTML( 'beforeend', data.html )
+            container.scrollTop = container.scrollHeight
           }
         }
       }

@@ -2,5 +2,7 @@
 <%= turbo_stream.update "content" do %>
   <script>
       document.getElementById('content').value = '';
+      const container = document.getElementById('messagesContainer');
+      container.scrollTop = container.scrollHeight;
   </script>
 <% end %>

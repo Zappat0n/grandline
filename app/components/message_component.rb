@@ -11,10 +11,6 @@ class MessageComponent < ViewComponent::Base
 
   attr_reader :user, :message, :index_message
 
-  def avatar_user
-    index_message ? message.other_user(user) : message.user
-  end
-
   def align
     index_message || message.user != user ? "" : "float-end"
   end
