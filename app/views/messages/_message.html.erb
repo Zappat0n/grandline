@@ -1,18 +1,5 @@
-<% if user == message.user %>
-  <div class="message text-only">
-    <%= render AvatarComponent.new(user: message.user) %>
-    <div class="response">
-      <p class="text"><%= message.content %></p>
-      <p class="time"><%= time_to_display(message.created_at) %></p>
-    </div>
-  </div>
-<% else %>
-  <div class="message text">
-    <div class="photo" style="background-image: url(<%= asset_path 'grandline.webp' %>);"></div>
-    <div>
-      <p class="text"><%= message.content %></p>
-      <p class="time"><%= time_to_display(message.created_at) %></p>
-    </div>
-  </div>
-<% end %>
-
+<li class="list-group-item clearfix mb-4">
+  <%= link_to message_path(message.other_user(current_user)) do %>
+    <%= render MessageComponent.new(message: message, user: current_user, index_message: false) %>
+  <% end %>
+</li>
