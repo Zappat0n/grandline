@@ -1,19 +1,24 @@
-$font-family-base: "Manrope", sans-serif;
-$body-bg: rgba(0, 0, 0, 0);
-
+// Colors
 $green-300: rgb(0, 212, 126);
 $green-600: rgb(2, 71, 81);
 $green-800: rgb(16, 40, 48);
 
+$blue-300: #e3effd;
+
 $primary: $green-300;
 $secondary: white;
 
+$body-bg: rgba(0, 0, 0, 0);
 $body-color: $green-600;
 $link-color: $green-600;
 
 $link-hover-color: $green-300;
 $link-active-color: $green-300;
 $headings-color: $green-800;
+
+// Fonts
+$font-family-base: "Manrope", sans-serif;
+$h6-font-size: 0.75rem;
 
 // Buttons
 $input-btn-padding-y: 15px;

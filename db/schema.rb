@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2024_12_07_174527) do
+ActiveRecord::Schema[8.1].define(version: 2024_12_15_155706) do
   create_table "contacts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "contact_id", null: false
@@ -44,6 +44,7 @@ ActiveRecord::Schema[8.1].define(version: 2024_12_07_174527) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "username"
+    t.boolean "ai", default: false
     t.index ["deleted_at"], name: "index_users_on_deleted_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

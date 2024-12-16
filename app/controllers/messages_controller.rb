@@ -11,8 +11,10 @@ class MessagesController < ApplicationController
   end
 
   def index
+    service = Messages::Index.new(user: current_user)
+
     render locals: {
-      messages: current_user.messages
+      messages: service.messages
     }
   end
 

@@ -6,11 +6,16 @@ class User < ApplicationRecord
          authentication_keys: [:username]
 
   has_many :messages
+  has_many :received_messages, class_name: "Message", foreign_key: :receiver_id
   has_many :contacts, foreign_key: :user_id
   has_many :contact_users, through: :contacts, source: :contact
 
   def conversation_with(user)
     Message.where(user: self, receiver: user).or(Message.where(user: user, receiver: self))
+  end
+
+  def total_messages
+    Message.where(user: self).or(Message.where(receiver: self))
   end
 
   private
