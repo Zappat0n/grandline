@@ -1,5 +1,5 @@
 <li class="list-group-item clearfix mb-4">
-  <%= link_to message_path(message.other_user(current_user)) do %>
-    <%= render MessageComponent.new(message: message, user: current_user, index_message: false) %>
+  <%= link_to message_path(message.other_user(user)) do %>
+    <%= render MessageComponent.new(message: message, user: user, index_message: false) %>
   <% end %>
 </li>

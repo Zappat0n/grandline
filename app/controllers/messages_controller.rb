@@ -2,8 +2,11 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @message = current_user.messages.create!(message_params)
-    publish_message(@message)
+    @message = Messages::Create.new(
+      user: current_user,
+      message_params: message_params,
+      broadcast: true
+    ).call
 
     respond_to do |format|
       format.turbo_stream
@@ -21,17 +24,13 @@ class MessagesController < ApplicationController
   def show
     user = User.find(params[:id])
     render locals: {
-      room_name: Message.room_name(current_user.id, user.id),
+      channel: Message.channel_name(current_user.id, user.id),
       messages: current_user.conversation_with(user),
       receiver: user
     }
   end
 
   private
-
-  def publish_message(message)
-    MessageBroadcastJob.perform_later(message)
-  end
 
   def message_params
     params.permit(:content, :receiver_id)

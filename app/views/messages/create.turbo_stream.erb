@@ -1,8 +1,5 @@
-<%= turbo_stream.append "messagesContainer", partial: "messages/message", locals: { message: @message, user: current_user } %>
-<%= turbo_stream.update "content" do %>
-  <script>
-      document.getElementById('content').value = '';
-      const container = document.getElementById('messagesContainer');
-      container.scrollTop = container.scrollHeight;
-  </script>
-<% end %>
+<%= turbo_stream.update(
+      "new_message",
+      partial: "messages/form",
+      locals: {
+        receiver: @message.other_user(current_user) })%>
