@@ -18,5 +18,4 @@ class DeepInfra::Client
     end
     JSON.parse(response.body)
   end
-
 end

@@ -8,6 +8,8 @@ class MessagesController < ApplicationController
       broadcast: true
     ).call
 
+    QueryAiJob.perform_later(@message) if @message.receiver.ai?
+
     respond_to do |format|
       format.turbo_stream
     end
