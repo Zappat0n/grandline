@@ -1,0 +1,16 @@
+<%= render CardComponent.new do |card| %>
+  <% card.with_header do %>
+    <h3><%= t("contacts.index.ai_models.headline") %></h3>
+  <% end %>
+  <% card.with_list do %>
+    <% if ai_models.present? %>
+      <% ai_models.each do |contact| %>
+        <li class="list-group-item clearfix m-1">
+          <%= render "contacts/add_contact", contact: contact %>
+        </li>
+      <% end %>
+    <% else %>
+      <p class="p-3"><%= t("contacts.index.ai_models.no_ai_models") %></p>
+    <% end %>
+  <% end %>
+<% end %>

@@ -19,6 +19,10 @@ Rails.application.routes.draw do
   root "pages#index"
 
   get "pages/index"
-  resources :contacts, only: [:index]
+  resources :contacts, only: [:index, :create]
+  namespace :contacts do
+    resource :finds, only: [:show]
+  end
+
   resources :messages, only: [:index, :show, :create]
 end
