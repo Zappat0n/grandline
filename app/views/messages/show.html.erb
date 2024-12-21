@@ -6,8 +6,8 @@
     <% end %>
 
     <% card.with_body do %>
-      <div>
-        <div id="messages" data-messages-target="container">
+      <div class="my-2">
+        <div id="messages" class="messages" data-messages-target="container">
           <%= render partial: "messages/message", collection: messages, locals: { user: current_user } %>
         </div>
       </div>

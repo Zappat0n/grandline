@@ -11,8 +11,8 @@ class MessageComponent < ViewComponent::Base
 
   attr_reader :user, :message, :index_message
 
-  def align
-    index_message || message.user != user ? "" : "float-end"
+  def align_and_mx
+    index_message || message.user != user ? "ms-2 me-5" : "float-end ms-5 me-2"
   end
 
   def background_color
