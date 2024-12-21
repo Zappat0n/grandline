@@ -1,2 +1,24 @@
-<h1>Contacts#index</h1>
-<%= render partial: "contacts/contact", collection: contacts %>
+<div class="container mt-5 w-50">
+  <div class="row">
+    <div class="col-6">
+      <%= render "contacts/contacts", contacts: contacts %>
+    </div>
+    <div class="col-6">
+      <%= render CardComponent.new do |card| %>
+        <% card.with_header do %>
+          <h1><%= "Add contacts" %></h1>
+        <% end %>
+
+        <%= card.with_body do %>
+          <div class="p-2">
+            <%= render "contacts/ai_models", ai_models: ai_models %>
+          </div>
+          <div class="p-2">
+            <%= render "contacts/look_for_contacts" %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

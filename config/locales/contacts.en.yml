@@ -1,4 +1,11 @@
 en:
   contacts:
     index:
+      ai_models:
+        headline: "AI Models"
+        no_ai_models: "No more AI models available yet."
       headline: "Contacts"
+      look_for_contacts:
+        headline: "Look for contacts"
+        no_contacts: "No contacts found."
+      no_contacts: "No contacts yet."

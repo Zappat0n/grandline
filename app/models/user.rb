@@ -10,6 +10,8 @@ class User < ApplicationRecord
   has_many :contacts, foreign_key: :user_id
   has_many :contact_users, through: :contacts, source: :contact
 
+  scope :ai, -> { where(ai: true) }
+
   def conversation_with(user)
     Message.where(user: self, receiver: user).or(Message.where(user: user, receiver: self))
   end

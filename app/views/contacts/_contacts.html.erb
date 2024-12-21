@@ -1,0 +1,17 @@
+<%= render CardComponent.new do |card| %>
+  <% card.with_header do %>
+    <h1><%= t(".headline") %></h1>
+  <% end %>
+
+  <% card.with_list do %>
+    <% if contacts.present? %>
+      <% contacts.each do |contact| %>
+        <li class="list-group-item clearfix m-1">
+          <%= render "contacts/contact", contact: contact %>
+        </li>
+      <% end %>
+    <% else %>
+      <p><%= t(".no_contacts") %>></p>
+    <% end %>
+  <% end %>
+<% end %>

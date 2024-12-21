@@ -1,0 +1,10 @@
+<div data-controller="contact_finder"
+     data-contact-finder-url-value="<%= url %>">
+  <%= text_field_tag :username,
+                     class: "form-control",
+                     placeholder: "Username",
+                     data: {
+                       "action": "enter->contact-finder#find",
+                       "contact-finder-target": "input",
+                     } %>
+</div>
