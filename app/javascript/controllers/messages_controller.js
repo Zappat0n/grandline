@@ -6,6 +6,7 @@ export default class extends Controller {
   static values = { room: String }
 
   connect() {
+    console.log("Connected to messages controller")
     this.containerTarget.scrollTop = this.containerTarget.scrollHeight
     this.textAreaTarget.focus()
   }
