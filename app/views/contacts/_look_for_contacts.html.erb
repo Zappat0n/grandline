@@ -3,6 +3,6 @@
     <h3><%= t("contacts.index.look_for_contacts.headline") %></h3>
   <% end %>
   <% card.with_body do %>
-
+    <%= render "contacts/find", url: contacts_finds_path %>
   <% end %>
 <% end %>
