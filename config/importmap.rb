@@ -9,3 +9,4 @@ pin "bootstrap", to: "bootstrap.min.js", preload: true
 pin "lodash", to: "lodash.js"
 
 pin_all_from "app/javascript/controllers", under: "controllers"
+pin_all_from "app/javascript/controllers/helpers", under: "helpers", to: "helpers"
