@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+  before_action :authenticate_user!
 
   def create
     contact = User.find(params[:contact_id])

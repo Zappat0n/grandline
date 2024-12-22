@@ -4,7 +4,10 @@
         id: "new-new_contact",
         class: "footer-chat d-flex flex-row align-items-center") do |form| %>
     <%= form.hidden_field :contact_id, value: contact.id %>
-    <%= form.button(type: :submit, class: "border-0 rounded-5 ms-2 p-2 bg-white", data: { turbo_confirm: "Are you sure? "} ) do %>
+    <%= form.button(
+      type: :submit,
+      class: "border-0 rounded-5 ms-2 p-2 bg-white",
+      data: { turbo_confirm: t("contacts.index.add_contact.confirm")} ) do %>
       <p><%= contact.username %></p>
     <% end %>
   <% end %>

@@ -1,6 +1,8 @@
 en:
   contacts:
     index:
+      add_contact:
+        confirm: "Are you sure you want to add this contact?"
       ai_models:
         headline: "AI Models"
         no_ai_models: "No more AI models available yet."
