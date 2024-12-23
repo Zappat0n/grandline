@@ -5,7 +5,7 @@ class DeepInfra::Client
   def call(question)
     response = Faraday.post(URL) do |req|
       req.headers["Content-Type"] = "application/json"
-      req.headers["Authorization"] = "Bearer #{Rails.application.credentials.deep_infra[:token]}"
+      req.headers["Authorization"] = "Bearer #{ENV["DEEP_INFRA_TOKEN"]}"
       req.body = {
         model: MODEL,
         messages: [
