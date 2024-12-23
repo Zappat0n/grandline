@@ -104,7 +104,7 @@ accessories:
       secret:
         - MYSQL_ROOT_PASSWORD
     files:
-#       - config/mysql/production.cnf:/etc/mysql/my.cnf
+      - config/secrets/production.json:config/secrets/production.json
       - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
     directories:
       - data:/var/lib/mysql
