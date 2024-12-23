@@ -110,4 +110,4 @@ accessories:
   grandline:
     host: www.grandline.work
     files:
-      - config/secrets/production.json:rails/config/secrets/production.json
+      - config/secrets/production.json:config/secrets/production.json
