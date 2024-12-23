@@ -109,9 +109,3 @@ accessories:
       - data:/var/lib/mysql
   files:
     - config/secrets/production.json:rails/config/secrets/production.json
-#   redis:
-#     image: redis:7.0
-#     host: 192.168.0.2
-#     port: 6379
-#     directories:
-#       - data:/data
