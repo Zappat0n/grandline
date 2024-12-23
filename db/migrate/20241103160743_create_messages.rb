@@ -1,4 +1,4 @@
-class CreateMessages < ActiveRecord::Migration[8.1]
+class CreateMessages < ActiveRecord::Migration[8.0]
   def change
     create_table :messages do |t|
       t.string :content, null: false
