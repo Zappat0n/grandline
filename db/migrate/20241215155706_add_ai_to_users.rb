@@ -1,4 +1,4 @@
-class AddAiToUsers < ActiveRecord::Migration[8.1]
+class AddAiToUsers < ActiveRecord::Migration[8.0]
   def change
     add_column :users, :ai, :boolean, default: false
   end
