@@ -107,6 +107,7 @@ accessories:
       - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
     directories:
       - data:/var/lib/mysql
-  host:
+  grandline:
+    host: www.grandline.work
     files:
       - config/secrets/production.json:rails/config/secrets/production.json
