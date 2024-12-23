@@ -16,5 +16,4 @@ class Messages::Index
   private
 
   attr_reader :user
-
 end
