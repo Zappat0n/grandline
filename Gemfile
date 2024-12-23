@@ -20,7 +20,7 @@ gem "stimulus-rails"
 gem "thruster", require: false
 gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
-gem "view_component", "~> 3.20"
+gem "view_component", "~> 3.21"
 
 group :development, :test do
   gem "brakeman", require: false
