@@ -13,7 +13,7 @@ RSpec.describe QueryAiJob, type: :job do
         user: message.receiver,
         message_params: {
           receiver: message.user,
-          content: "Hello, I am your AI",
+          content: "Hello, I am your AI"
         },
         broadcast: true
       ).and_call_original

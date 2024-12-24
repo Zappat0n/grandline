@@ -16,6 +16,10 @@ class User < ApplicationRecord
     Message.where(user: self, receiver: user).or(Message.where(user: user, receiver: self)).order(created_at: :asc)
   end
 
+  def ai_models
+    contact_users.where(ai: true)
+  end
+
   private
 
   def email_required?
