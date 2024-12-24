@@ -14,12 +14,4 @@ class ContactsController < ApplicationController
       ai_models: User.ai.where.not(id: current_user.contacts.select(:contact_id))
     }
   end
-
-  def show
-    user = User.find(params[:id])
-
-    render locals: {
-      messages: current_user.conversation_with(user)
-    }
-  end
 end
