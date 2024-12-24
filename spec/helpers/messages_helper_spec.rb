@@ -11,5 +11,17 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe MessagesHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "time_to_display" do
+    it "renders the right string for today" do
+      time = Time.zone.now
+
+      expect(helper.time_to_display(time)).to eq(time.strftime("%H:%M"))
+    end
+
+    it "renders the right string for yesterday" do
+      time = Time.zone.now - 1.day
+
+      expect(helper.time_to_display(time)).to eq(time.strftime("%Y-%m-%d %H:%M"))
+    end
+  end
 end
