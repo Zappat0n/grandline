@@ -20,20 +20,37 @@ RSpec.describe MessagesController do
 
   describe "create" do
     it "authenticates the user" do
-      post :create
+      post :create, as: :turbo_stream
 
       expect(response).to redirect_to(new_user_session_path)
     end
 
-    xit "creates a message" do
+    it "creates a message" do
       user = create(:user)
       receiver = create(:user, username: "Michael")
       sign_in(user)
 
-      post :create, params: { message: { content: "Hello", receiver_id: receiver.id } }
+      post :create, as: :turbo_stream, params: { content: "Hello", receiver_id: receiver.id }
 
-      expect(user.messages).to include(message)
-      expect(response).to redirect_to(messages_path)
+      expect(user.messages.size).to be(1)
+    end
+  end
+
+  describe "show" do
+    it "authenticates the user" do
+      get :show, params: { id: 1 }
+
+      expect(response).to redirect_to(new_user_session_path)
+    end
+
+    it "returns http success" do
+      user = create(:user)
+      receiver = create(:user, username: "Michael")
+      sign_in(user)
+
+      get :show, params: { id: receiver.id }
+
+      expect(response).to have_http_status(:success)
     end
   end
 end
