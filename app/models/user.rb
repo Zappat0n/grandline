@@ -13,11 +13,7 @@ class User < ApplicationRecord
   scope :ai, -> { where(ai: true) }
 
   def conversation_with(user)
-    Message.where(user: self, receiver: user).or(Message.where(user: user, receiver: self))
-  end
-
-  def total_messages
-    Message.where(user: self).or(Message.where(receiver: self))
+    Message.where(user: self, receiver: user).or(Message.where(user: user, receiver: self)).order(created_at: :asc)
   end
 
   private

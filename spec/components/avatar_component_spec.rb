@@ -3,13 +3,15 @@
 require "rails_helper"
 
 RSpec.describe AvatarComponent, type: :component do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "renders the different sections" do
+    user = create(:user, username: "johny")
 
-  # it "renders something useful" do
-  #   expect(
-  #     render_inline(described_class.new(attr: "value")) { "Hello, components!" }.css("p").to_html
-  #   ).to include(
-  #     "Hello, components!"
-  #   )
-  # end
+    component = described_class.new(user: user)
+
+    expect(
+      render_inline(component)
+    )
+      .to have_css(".avatar")
+      .and have_text("JOH")
+  end
 end

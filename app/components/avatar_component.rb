@@ -10,8 +10,6 @@ class AvatarComponent < ViewComponent::Base
   attr_reader :user
 
   def initials
-    return "GUE" unless user.username.present?
-
     user.username[0, 3].upcase
   end
 end

@@ -3,13 +3,25 @@
 require "rails_helper"
 
 RSpec.describe CardComponent, type: :component do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "renders the different sections" do
+    component = described_class.new.tap do |c|
+      c.with_header { "Header" }
+      c.with_body { "Body" }
+      c.with_list { "List" }
+      c.with_footer { "Footer" }
+    end
 
-  # it "renders something useful" do
-  #   expect(
-  #     render_inline(described_class.new(attr: "value")) { "Hello, components!" }.css("p").to_html
-  #   ).to include(
-  #     "Hello, components!"
-  #   )
-  # end
+    expect(
+      render_inline(component)
+    )
+      .to have_css(".card")
+      .and have_css(".card-header")
+      .and have_text("Header")
+      .and have_css(".card-body")
+      .and have_text("Body")
+      .and have_css(".list-group")
+      .and have_text("List")
+      .and have_css(".card-footer")
+      .and have_text("Footer")
+  end
 end
