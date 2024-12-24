@@ -27,7 +27,7 @@ RSpec.describe MessagesController do
 
     it "creates a message" do
       user = create(:user)
-      receiver = create(:user, username: "Michael")
+      receiver = create(:user)
       sign_in(user)
 
       post :create, as: :turbo_stream, params: { content: "Hello", receiver_id: receiver.id }
@@ -45,7 +45,7 @@ RSpec.describe MessagesController do
 
     it "returns http success" do
       user = create(:user)
-      receiver = create(:user, username: "Michael")
+      receiver = create(:user)
       sign_in(user)
 
       get :show, params: { id: receiver.id }

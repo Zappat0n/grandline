@@ -7,7 +7,7 @@ RSpec.describe User, type: :model do
 
   it "should have a conversation_with method" do
     user = create(:user)
-    user2 = create(:user, username: "user2")
+    user2 = create(:user)
     message = create(:message, user: user, receiver: user2)
     message2 = create(:message, user: user2, receiver: user)
 

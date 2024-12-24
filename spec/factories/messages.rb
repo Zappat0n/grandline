@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :message do
-    content { "Hello" }
+    content { |n| "content-#{n}" }
     user
-    receiver { create(:user, username: "receiver") }
+    receiver { create(:user) }
   end
 end

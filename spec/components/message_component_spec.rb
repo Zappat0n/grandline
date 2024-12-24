@@ -4,8 +4,8 @@ require "rails_helper"
 
 RSpec.describe MessageComponent, type: :component do
   it "renders the different sections when index_message is false" do
-    user = create(:user, username: "johny")
-    receiver = create(:user, username: "michael")
+    user = create(:user)
+    receiver = create(:user)
     message = create(:message, user: user, receiver: receiver)
 
     rendered_component = render_inline(
@@ -25,8 +25,8 @@ RSpec.describe MessageComponent, type: :component do
   end
 
   it "renders the different sections when index_message is true" do
-    user = create(:user, username: "johny")
-    receiver = create(:user, username: "michael")
+    user = create(:user)
+    receiver = create(:user)
     message = create(:message, user: user, receiver: receiver)
 
     rendered_component = render_inline(

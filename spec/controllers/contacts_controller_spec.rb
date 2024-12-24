@@ -27,7 +27,7 @@ RSpec.describe ContactsController do
 
     it "creates a contact" do
       user = create(:user)
-      contact = create(:user, username: "Michael")
+      contact = create(:user)
       sign_in(user)
 
       post :create, params: { contact_id: contact.id }
