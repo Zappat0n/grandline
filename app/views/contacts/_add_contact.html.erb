@@ -2,7 +2,7 @@
   <%= form_with(
         url: contacts_path,
         id: "new-new_contact",
-        class: "footer-chat d-flex flex-row align-items-center") do |form| %>
+        class: "d-flex flex-row align-items-center") do |form| %>
     <%= form.hidden_field :contact_id, value: contact.id %>
     <%= form.button(
       type: :submit,

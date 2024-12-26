@@ -1,5 +1,2 @@
-<%= turbo_stream.update(
-      "new_message",
-      partial: "messages/form",
-      locals: {
-        receiver: @message.other_user(current_user) })%>
+<%= turbo_stream.reset_value("#new-message-content") %>
+<%= turbo_stream.focus("#new-message-content") %>

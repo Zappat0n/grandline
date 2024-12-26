@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
     @message = Messages::Create.new(
       user: current_user,
       message_params: message_params,
-      broadcast: true
+      broadcast_to: current_user
     ).call
 
     QueryAiJob.perform_later(@message) if @message.receiver.ai?

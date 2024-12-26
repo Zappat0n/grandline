@@ -8,7 +8,7 @@ class QueryAiJob < ApplicationJob
         receiver: message.user,
         content: response(message)
       },
-      broadcast: true
+      broadcast_to: message.user
     ).call
   end
 
