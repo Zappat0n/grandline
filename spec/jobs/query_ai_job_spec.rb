@@ -15,7 +15,7 @@ RSpec.describe QueryAiJob, type: :job do
           receiver: message.user,
           content: "Hello, I am your AI"
         },
-        broadcast: true
+        broadcast_to: message.user
       ).and_call_original
 
       query_ai_job.perform(message)
