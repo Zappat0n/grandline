@@ -1,15 +1,14 @@
-<div class="container screen-size w-50 mt-1"
-     data-controller="messages">
+<div class="container screen-size w-50 mt-1">
   <%= render CardComponent.new do |card| %>
     <% card.with_header do %>
       <h1 class="text-center fs-3 mb-0">Conversation with <%= receiver.username %></h1>
     <% end %>
 
     <% card.with_body do %>
-      <div class="my-2">
-        <div id="messages" class="messages" data-messages-target="container">
+      <div class="messages my-2">
+        <turbo-frame id="messages">
           <%= render partial: "messages/message", collection: messages, locals: { user: current_user } %>
-        </div>
+        </turbo-frame>
       </div>
     <% end %>
 
