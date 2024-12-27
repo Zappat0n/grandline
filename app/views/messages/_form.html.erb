@@ -10,7 +10,7 @@
                        autofocus: true,
                        data: { "messages-target" => "textArea" } %>
     <%= form.button(type: :submit, class: "border-0 rounded-5 ms-2 p-2 bg-white") do %>
-      <i class="fa-regular fa-paper-plane fa-2x color-secondary" aria-hidden="true"></i>
+      <%= image_tag "icons/paper_plane_white.svg", width: 48, height: 48, alt: "Submit", class: "bg-primary rounded-circle p-2" %>
     <% end %>
   <% end %>
 </div>
