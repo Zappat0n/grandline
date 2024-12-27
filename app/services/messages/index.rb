@@ -11,6 +11,7 @@ class Messages::Index
 
     Message
       .joins("INNER JOIN (#{subquery.to_sql}) AS sub ON messages.id = sub.max_id")
+      .includes(:user, :receiver)
   end
 
   private
