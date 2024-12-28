@@ -1,4 +1,4 @@
-<div class="mx-auto w-25 mt-5">
+<div class="mx-auto w-50 mt-5">
   <%= render CardComponent.new do |card| %>
     <% card.with_header do %>
       <h2 class="text-center mb-0">Sign up</h2>
@@ -9,9 +9,14 @@
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
 
-          <div class="field text-center my-3">
+          <div class="field text-center mb-3">
             <%= f.label :username %><br />
             <%= f.text_field :username, autofocus: true, class: "underline w-75" %>
+          </div>
+
+          <div class="field text-center mb-3">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, class: "underline w-75" %>
           </div>
 
           <div class="field text-center mb-3">

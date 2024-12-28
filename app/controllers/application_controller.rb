@@ -7,8 +7,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:username])
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:username, :email])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :email])
   end
 
   def set_user_cookie

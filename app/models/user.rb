@@ -10,6 +10,9 @@ class User < ApplicationRecord
   has_many :contacts, foreign_key: :user_id
   has_many :contact_users, through: :contacts, source: :contact
 
+  validates :username, presence: true, uniqueness: true
+  validates :email, uniqueness: true, allow_nil: true
+
   scope :ai, -> { where(ai: true) }
 
   def conversation_with(user)
