@@ -1,3 +1,11 @@
+<%
+  set_meta_tags(
+    title: "Conversations",
+    description: "Renders the last message of each conversation",
+    keywords: "Chat, Messages"
+  )
+%>
+
 <div class="container mt-5">
   <%= render CardComponent.new do |card| %>
     <% card.with_header do %>

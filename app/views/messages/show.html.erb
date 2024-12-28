@@ -1,3 +1,11 @@
+<%
+  set_meta_tags(
+    title: "Conversation with #{receiver.username}",
+    description: "Renders the conversation with a specific user",
+    keywords: "Chat, Messages"
+  )
+%>
+
 <div class="container screen-size w-50 mt-1">
   <%= render CardComponent.new do |card| %>
     <% card.with_header do %>

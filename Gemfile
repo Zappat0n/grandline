@@ -10,6 +10,7 @@ gem "faraday", "~> 2.12"
 gem "importmap-rails"
 gem "jbuilder"
 gem "kamal", require: false
+gem "meta-tags", "~> 2.22"
 gem "mysql2", "~> 0.5"
 gem "propshaft"
 gem "puma", ">= 5.0"
