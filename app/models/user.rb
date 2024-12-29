@@ -13,7 +13,7 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
   validates :email, uniqueness: true, unless: Proc.new { |b| b.email.blank? }
 
-  scope :ai, -> { where(ai: true) }
+  scope :ai_models, -> { where(ai: true) }
 
   def conversation_with(user)
     Message.where(user: self, receiver: user).or(Message.where(user: user, receiver: self)).order(created_at: :asc)

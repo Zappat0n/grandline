@@ -26,8 +26,8 @@ RSpec.describe User, type: :model do
   end
 
   context "scopes" do
-    it "has a scope called ai" do
-      expect(User.ai).to eq(User.where(ai: true))
+    it "has a scope called ai_models" do
+      expect(User.ai_models).to eq(User.where(ai: true))
     end
   end
 

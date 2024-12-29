@@ -6,12 +6,12 @@
   <% card.with_list do %>
     <% if contacts.present? %>
       <% contacts.each do |contact| %>
-        <li class="list-group-item clearfix m-1">
+        <li class="list-group-item clearfix">
           <%= render "contacts/contact", contact: contact %>
         </li>
       <% end %>
     <% else %>
-      <%= render "contacts/no_contact" %>
+      <p class="p-4"><%= t("contacts.index.look_for_contacts.no_contacts") %></p>
     <% end %>
   <% end %>
 <% end %>
