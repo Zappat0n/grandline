@@ -4,18 +4,16 @@
   <% end %>
 
   <%= card.with_body do %>
-    <div class="p-3">
-      <p><%= t("pages.index.created_by.body") %></p>
+    <p><%= t("pages.index.created_by.body") %></p>
 
-      <div class="d-flex">
-        <%= link_to "https://github.com/Zappat0n", target: "_blank", rel: "nofollow" do %>
-          <%= image_tag "icons/github.svg", width: 24, height: 24, alt: "GitHub" %>
-        <% end %>
+    <div class="d-flex">
+      <%= link_to "https://github.com/Zappat0n", target: "_blank", rel: "nofollow" do %>
+        <%= image_tag "icons/github.svg", width: 24, height: 24, alt: "GitHub" %>
+      <% end %>
 
-        <%= link_to "https://www.linkedin.com/in/angel-barros/", class: "ms-2", target: "_blank", rel: "nofollow" do %>
-          <%= image_tag "icons/linkedin.svg", width: 24, height: 24, alt: "LinkedIn" %>
-        <% end %>
-      </div>
+      <%= link_to "https://www.linkedin.com/in/angel-barros/", class: "ms-2", target: "_blank", rel: "nofollow" do %>
+        <%= image_tag "icons/linkedin.svg", width: 24, height: 24, alt: "LinkedIn" %>
+      <% end %>
     </div>
   <% end %>
 <% end %>
