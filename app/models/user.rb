@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :contact_users, through: :contacts, source: :contact
 
   validates :username, presence: true, uniqueness: true
-  validates :email, uniqueness: true, allow_nil: true
+  validates :email, uniqueness: true, unless: Proc.new { |b| b.email.blank? }
 
   scope :ai, -> { where(ai: true) }
 

@@ -1,6 +1,30 @@
 require "rails_helper"
 
 RSpec.describe User, type: :model do
+  context "validations" do
+    it "is valid with valid attributes" do
+      expect(build(:user)).to be_valid
+    end
+
+    it "is not valid without a username" do
+      expect(build(:user, username: nil)).to_not be_valid
+    end
+
+    it "is valid with a blank email" do
+      expect(build(:user, email: nil)).to be_valid
+    end
+
+    it "is not valid with a duplicate username" do
+      user = create(:user)
+      expect(build(:user, username: user.username)).to_not be_valid
+    end
+
+    it "is not valid with a duplicated email" do
+      user = create(:user, email: "my_email@this.com")
+      expect(build(:user, email: user.email)).to_not be_valid
+    end
+  end
+
   context "scopes" do
     it "has a scope called ai" do
       expect(User.ai).to eq(User.where(ai: true))
