@@ -198,6 +198,7 @@ GEM
       thor (~> 1.3)
       zeitwerk (>= 2.6.18, < 3.0)
     language_server-protocol (3.17.0.3)
+    lefthook (1.10.1)
     listen (3.9.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -485,6 +486,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kamal
+  lefthook
   listen (~> 3.9)
   lookbook (~> 2.3.4)
   meta-tags (~> 2.22)
