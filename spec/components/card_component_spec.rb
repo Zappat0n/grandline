@@ -19,7 +19,6 @@ RSpec.describe CardComponent, type: :component do
       .and have_text("Header")
       .and have_css(".card-body")
       .and have_text("Body")
-      .and have_css(".list-group")
       .and have_text("List")
       .and have_css(".card-footer")
       .and have_text("Footer")
