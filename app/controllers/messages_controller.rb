@@ -27,7 +27,8 @@ class MessagesController < ApplicationController
     user = User.find(params[:id])
     render locals: {
       channel: Message.channel_name(current_user.id, user.id),
-      messages: current_user.conversation_with(user).includes(:user, :receiver),
+      messages: current_user.conversation_with(user).includes(:user
+      ),
       receiver: user
     }
   end

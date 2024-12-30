@@ -11,7 +11,7 @@ class ContactsController < ApplicationController
   def index
     render locals: {
       contacts: current_user.contact_users,
-      ai_models: User.ai_models
+      ai_models: User.ai_models.where.not(id: current_user.ai_models.select(:id))
     }
   end
 end

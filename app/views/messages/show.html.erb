@@ -7,7 +7,7 @@
 %>
 
 <div class="container screen-size w-50 mt-1">
-  <%= render CardComponent.new do |card| %>
+  <%= render CardComponent.new(no_padding: true) do |card| %>
     <% card.with_header do %>
       <h1 class="text-center fs-3 mb-0">Conversation with <%= receiver.username %></h1>
     <% end %>

@@ -13,16 +13,14 @@
     <% end %>
 
     <% card.with_list do %>
-      <% if messages.present? %>
+      <%= render CardListComponent.new(no_items_message: t(".no_conversations")) do |card_list| %>
         <% messages.each do |message| %>
-          <li class="list-group-item clearfix m-1">
+          <%= card_list.with_item do %>
             <%= link_to message_path(message.other_user(current_user)) do %>
               <%= render MessageComponent.new(message: message, user: current_user, index_message: true) %>
             <% end %>
-          </li>
+          <% end %>
         <% end %>
-      <% else %>
-        <p class="p-4"><%= t(".no_conversations") %></p>
       <% end %>
     <% end %>
   <% end %>

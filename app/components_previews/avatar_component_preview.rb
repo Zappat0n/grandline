@@ -2,6 +2,12 @@
 
 class AvatarComponentPreview < ViewComponent::Preview
   def default
-    render(AvatarComponent.new)
+    render(
+      AvatarComponent.new(
+        user: User.new(
+          username: "John Doe",
+        )
+      )
+    )
   end
 end

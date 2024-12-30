@@ -3,14 +3,12 @@
     <h3><%= t("contacts.index.ai_models.headline") %></h3>
   <% end %>
   <% card.with_list do %>
-    <% if ai_models.present? %>
+    <%= render CardListComponent.new(no_items_message: t("contacts.index.ai_models.no_ai_models")) do |card_list| %>
       <% ai_models.each do |contact| %>
-        <li class="list-group-item clearfix">
+        <%= card_list.with_item do %>
           <%= render "contacts/add_contact", contact: contact %>
-        </li>
+        <% end %>
       <% end %>
-    <% else %>
-      <p class="p-4"><%= t("contacts.index.ai_models.no_ai_models") %></p>
     <% end %>
   <% end %>
 <% end %>
