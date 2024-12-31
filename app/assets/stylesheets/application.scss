@@ -5,8 +5,9 @@
 @import "bootstrap";
 
 // Configuration
-@import "config/flash_messages";
 @import "config/buttons";
+@import "config/layouts";
+@import "config/flash_messages";
 
 // Components
 @import "components/avatar";

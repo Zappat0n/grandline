@@ -6,24 +6,26 @@
   )
 %>
 
-<div class="container screen-size w-50 mt-1">
-  <%= render CardComponent.new(no_padding: true) do |card| %>
-    <% card.with_header do %>
-      <h1 class="text-center fs-3 mb-0">Conversation with <%= receiver.username %></h1>
-    <% end %>
+<div class="container max-w-screen-lg my-4">
+  <div class="screen-size">
+    <%= render CardComponent.new(no_padding: true) do |card| %>
+      <% card.with_header do %>
+        <h1 class="text-center fs-3 mb-0">Conversation with <%= receiver.username %></h1>
+      <% end %>
 
-    <% card.with_body do %>
-      <div class="messages my-2">
-        <turbo-frame id="messages">
-          <%= render partial: "messages/message", collection: messages, locals: { user: current_user } %>
-        </turbo-frame>
-      </div>
-    <% end %>
+      <% card.with_body do %>
+        <div class="messages my-2 px-3 py-1">
+          <turbo-frame id="messages">
+            <%= render partial: "messages/message", collection: messages, locals: { user: current_user } %>
+          </turbo-frame>
+        </div>
+      <% end %>
 
-    <% card.with_footer do %>
-      <%= render "messages/form", receiver: receiver %>
+      <% card.with_footer do %>
+        <%= render "messages/form", receiver: receiver %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
 
 <%= turbo_stream_from channel %>

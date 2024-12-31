@@ -6,7 +6,7 @@
   )
 %>
 
-<div class="container mt-5">
+<div class="container max-w-screen-lg my-4">
   <%= render CardComponent.new do |card| %>
     <% card.with_header do %>
       <h1><%= t(".headline") %></h1>

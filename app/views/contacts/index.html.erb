@@ -6,12 +6,12 @@
   )
 %>
 
-<div class="container mt-5 w-50">
+<div class="container max-w-screen-lg my-4">
   <div class="row">
-    <div class="col-6">
+    <div class="col-12 col-lg-6">
       <%= render "contacts/contacts", contacts: contacts %>
     </div>
-    <div class="col-6">
+    <div class="col-12 col-lg-6 mt-3 mt-lg-0">
       <%= render CardComponent.new do |card| %>
         <% card.with_header do %>
           <h1><%= "Add contacts" %></h1>

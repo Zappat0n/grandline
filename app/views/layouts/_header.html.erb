@@ -1,18 +1,34 @@
-<nav>
-  <div class="container d-flex flex-row justify-content-between align-items-center py-4 w-100">
-    <%= link_to root_path, "aria-label" => "index page" do %>
+<nav class="navbar navbar-expand-md">
+  <div class="container mt-1">
+    <%= link_to root_path, "aria-label" => "index page", class: "navbar-brand" do %>
       <%= image_tag "grandline.webp", size: "83x64", class: "rounded", alt: "grandline map" %>
     <% end %>
-
-    <div class="d-flex flex-row align-items-baseline">
-      <% if current_user %>
-        <%= link_to "Messages", messages_path, class: "ms-5" %>
-        <%= link_to "Contacts", contacts_path, class: "ms-5" %>
-        <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-primary ms-5"%>
-      <% else %>
-        <%= link_to 'Sign Up', new_user_registration_path, class: "ms-5" %>
-        <%= link_to 'Sign In', new_user_session_path, class: "btn btn-primary ms-5" %>
-      <% end %>
+    <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu"
+            aria-controls="navbarMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse mt-2 mt-md-0" id="navbarMenu">
+      <ul class="navbar-nav ms-auto d-flex flex-row align-items-baseline">
+        <% if current_user %>
+          <li class="nav-item ms-auto ms-md-5">
+            <%= link_to "Messages", messages_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item ms-auto ms-md-5">
+            <%= link_to "Contacts", contacts_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item ms-auto ms-md-5">
+            <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-primary"%>
+          </li>
+        <% else %>
+          <%= link_to 'Sign Up', new_user_registration_path, class: "ms-5" %>
+          <%= link_to 'Sign In', new_user_session_path, class: "btn btn-primary ms-5" %>
+        <% end %>
+      </ul>
     </div>
   </div>
 </nav>
