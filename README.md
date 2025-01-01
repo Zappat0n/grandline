@@ -1,24 +1,22 @@
-# README
+# Grandline
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Grandline is a simple web application to test different AI models.
 
-Things you may want to cover:
+## Ruby Version
 
-* Ruby version
+- Ruby 3.3.5
 
-* System dependencies
+## System Dependencies
 
-* Configuration
+- Rails 8.0.1
+- MySQL 8.4.2
 
-* Database creation
+## Check list
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- [x] Create user management
+- [x] Connect with AI model
+- [x] Create a simple UI
+- [ ] Add context to the AI models
+- [ ] Add more AI models
+- [ ] Allow users to create their own AI models with different personalities
+- [ ] Connect with the Telegram API
