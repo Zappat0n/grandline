@@ -2,6 +2,8 @@
 
 Grandline is a simple web application to test different AI models.
 
+[www.grandline.work](https://www.grandline.work)
+
 ## Ruby Version
 
 - Ruby 3.3.5
