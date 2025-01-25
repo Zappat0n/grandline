@@ -1,0 +1,2 @@
+module Model::DefinitionsHelper
+end

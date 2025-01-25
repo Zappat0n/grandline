@@ -1,0 +1,15 @@
+<div class="container row mx-auto my-4">
+  <div class="col-12 mx-auto">
+    <%= render CardComponent.new do |card| %>
+      <% card.with_header do %>
+        <h2 class="text-center mb-0">New model</h2>
+      <% end %>
+
+      <% card.with_body do %>
+        <%= render "form", definition: Model::Definition.new %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+

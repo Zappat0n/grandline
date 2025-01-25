@@ -25,4 +25,8 @@ Rails.application.routes.draw do
   end
 
   resources :messages, only: [:index, :show, :create]
+
+  namespace :model do
+    resources :definitions
+  end
 end

@@ -15,4 +15,11 @@ input {
   }
 }
 
+.bordered {
+  border: 2px solid $green-300;
+  border-radius: 16px;
+  outline: none;
+  color: $green-600;
+  transition: border-color 0.3s;
+}
 

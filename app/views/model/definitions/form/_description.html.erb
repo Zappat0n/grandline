@@ -1,0 +1,26 @@
+<%= render CardComponent.new do |card| %>
+  <% card.with_header do %>
+    <h2 class="text-center mb-0">Description</h2>
+  <% end %>
+
+  <% card.with_body do %>
+    <div class="text-center">
+      <div class="field text-center my-3">
+        <%= f.label :name %><br />
+        <%= f.text_field :name, class: "underline w-75" %>
+      </div>
+
+      <div class="field text-center my-3">
+        <%= f.label :description %><br />
+        <%= f.textarea :description, size: "70x5", class: "bordered w-75 mt-2 p-3" %>
+      </div>
+
+      <div class="field text-center my-3" data-controller="import-csv">
+        <%= label_tag :csv_file %><br />
+        <%= file_field_tag :csv_file, class: "bordered w-75 mt-2 p-3", data: {
+          action: "import-csv#fileChosen",
+        } %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

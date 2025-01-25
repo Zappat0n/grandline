@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_21_053249) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_23_212720) do
   create_table "contacts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "contact_id", null: false
@@ -30,6 +30,33 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_21_053249) do
     t.index ["deleted_at"], name: "index_messages_on_deleted_at"
     t.index ["receiver_id"], name: "fk_rails_67c67d2963"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "model_data_points", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "model_definition_id", null: false
+    t.float "y", null: false
+    t.json "x", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["model_definition_id"], name: "index_model_data_points_on_model_definition_id"
+  end
+
+  create_table "model_definitions", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "name", null: false
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_model_definitions_on_user_id"
+  end
+
+  create_table "model_variables", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "model_definition_id", null: false
+    t.string "name", null: false
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["model_definition_id"], name: "index_model_variables_on_model_definition_id"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -55,4 +82,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_21_053249) do
   add_foreign_key "contacts", "users", column: "contact_id"
   add_foreign_key "messages", "users"
   add_foreign_key "messages", "users", column: "receiver_id"
+  add_foreign_key "model_data_points", "model_definitions"
+  add_foreign_key "model_definitions", "users"
+  add_foreign_key "model_variables", "model_definitions"
 end

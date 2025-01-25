@@ -1,0 +1,15 @@
+<%= form_with model: definition, class: "text-center" do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <div class="row mb-3">
+    <div class="col-12 col-lg-6 mx-auto">
+      <%= render "model/definitions/form/description", f: f %>
+    </div>
+    <div class="col-12 col-lg-6 mx-auto">
+      <%= render "model/definitions/form/variables", f: f %>
+    </div>
+  </div>
+
+  <div>
+    <%= f.submit "Save", class: "btn btn-primary w-75" %>
+  </div>
+<% end %>
