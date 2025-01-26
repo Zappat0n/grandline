@@ -1,0 +1,15 @@
+<%= render CardComponent.new do |card| %>
+  <% card.with_header do %>
+    <h3 class="text-center">Variables</h3>
+  <% end %>
+
+  <%= card.with_body do %>
+    <%= render CardListComponent.new(no_items_message: "No models") do |card_list| %>
+      <% model.variables.each do |variable| %>
+        <%= card_list.with_item do %>
+          <%= variable.name %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

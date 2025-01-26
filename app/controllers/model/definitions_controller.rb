@@ -28,6 +28,9 @@ class Model::DefinitionsController < ApplicationController
   end
 
   def show
+    render locals: {
+      model: current_user.models.find(params[:id])
+    }
   end
 
   private
