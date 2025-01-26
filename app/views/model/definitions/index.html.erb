@@ -1,0 +1,29 @@
+<%
+  set_meta_tags(
+    title: "Models",
+    description: "Renders the models of the user",
+    keywords: "Model"
+  )
+%>
+
+<div class="container max-w-screen-lg my-4">
+  <div class="row">
+    <div class="col-12 col-lg-6 mt-3 mt-lg-0 mx-auto">
+      <%= render CardComponent.new do |card| %>
+        <% card.with_header do %>
+          <h1 class="text-center"><%= "Models" %></h1>
+        <% end %>
+
+        <%= card.with_list do %>
+          <%= render CardListComponent.new(no_items_message: "No models") do |card_list| %>
+            <% models.each do |model| %>
+              <%= card_list.with_item do %>
+                <%= link_to model.name, model_definition_path(model.id) %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

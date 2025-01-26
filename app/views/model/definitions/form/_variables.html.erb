@@ -4,14 +4,14 @@
   <% end %>
 
   <% card.with_body do %>
-    <div class="text-center" data-controller="variables">
-      <div data-variables-target="container"></div>
+    <div class="text-center">
+      <div data-models-form-target="variablesContainer"></div>
 
-      <template data-variables-target="template">
+      <template data-models-form-target="variablesTemplate">
         <div class="nested-fields field text-center bordered my-3 p-3">
           <%= f.fields_for :variables, Model::Variable.new, child_index: "TEMPLATE_RECORD" do |variable_form| %>
             <div class="d-flex flex-row align-items-baseline">
-              <button class="border-0 bg-transparent me-2" data-action="click->variables#removeVariable">
+              <button class="border-0 bg-transparent me-2" data-action="click->models-form#removeVariable">
                 <%= image_tag "icons/cross.svg", width: 16, height: 16, alt: "cross" %>
               </button>
               <%= variable_form.label :name, class: "me-2" %>
@@ -21,7 +21,7 @@
         </div>
       </template>
 
-      <button data-action="click->variables#addVariable" class="btn btn-secondary w-75 my-3">Add Variable</button>
+      <button data-action="click->models-form#addVariable" class="btn btn-secondary w-75 my-3">Add Variable</button>
     </div>
   <% end %>
 <% end %>

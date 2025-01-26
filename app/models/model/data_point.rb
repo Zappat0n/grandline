@@ -1,3 +1,3 @@
 class Model::DataPoint < ApplicationRecord
-  belongs_to :definition, class_name: "Model::Definition"
+  belongs_to :definition, class_name: "Model::Definition", foreign_key: "model_definition_id"
 end

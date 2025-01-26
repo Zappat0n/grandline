@@ -16,6 +16,9 @@
       <ul class="navbar-nav ms-auto d-flex flex-row align-items-baseline">
         <% if current_user %>
           <li class="nav-item ms-auto ms-md-5">
+            <%= link_to "Models", model_definitions_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item ms-auto ms-md-5">
             <%= link_to "Messages", messages_path, class: "nav-link" %>
           </li>
           <li class="nav-item ms-auto ms-md-5">

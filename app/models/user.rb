@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :received_messages, class_name: "Message", foreign_key: :receiver_id
   has_many :contacts, foreign_key: :user_id
   has_many :contact_users, through: :contacts, source: :contact
+  has_many :models, class_name: "Model::Definition"
 
   validates :username, presence: true, uniqueness: true
   validates :email, uniqueness: true, unless: Proc.new { |b| b.email.blank? }
