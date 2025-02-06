@@ -29,7 +29,7 @@ group :development, :test do
   gem "dotenv", groups: [:development, :test]
   gem "listen", "~> 3.9"
   gem "lookbook", "~> 2.3.4"
-  gem "rspec-rails", "~> 7.1.0"
+  gem "rspec-rails", "~> 7.1.1"
   gem "rubocop-rails-omakase", require: false
 end
 
