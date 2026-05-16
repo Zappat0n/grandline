@@ -4,19 +4,16 @@ Chart.register(...registerables);
 
 // Connects to data-controller="chart"
 export default class extends Controller {
-  static  targets = [ "container" ]
+  static targets = [ "container" ]
+  static values = {
+    type: String,
+    data: Object,
+  }
 
   connect() {
     new Chart(this.containerTarget, {
-      type: 'bar',
-      data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3],
-          borderWidth: 1
-        }]
-      },
+      type: this.typeValue,
+      data: this.dataValue,
       options: {
         scales: {
           y: {

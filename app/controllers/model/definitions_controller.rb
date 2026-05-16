@@ -28,8 +28,10 @@ class Model::DefinitionsController < ApplicationController
   end
 
   def show
+    serie = Model::Type::Bubble.new(model: current_user.models.find(params[:id]), x: "x", y: "y")
     render locals: {
-      model: current_user.models.find(params[:id])
+      model: current_user.models.find(params[:id]),
+      serie: serie
     }
   end
 

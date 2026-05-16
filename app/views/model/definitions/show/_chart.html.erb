@@ -4,10 +4,11 @@
   <% end %>
 
   <%= card.with_body do %>
-    <canvas
-         data-controller="chart"
-         data-chart-target="container"
-    >
+    <canvas style="height: 1200px"
+      data-controller="chart"
+      data-chart-target="container"
+      data-chart-type-value="bubble"
+      data-chart-data-value="<%= serie.serie.to_json %>">
     </canvas>
   <% end %>
 <% end %>

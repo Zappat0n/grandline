@@ -2,10 +2,12 @@ source "https://rubygems.org"
 
 gem "rails", "~> 8.0.1"
 
+gem "cgi"
 gem "bootsnap", require: false
 gem "bootstrap", "~> 5.3.3"
 gem "dartsass-rails", "~> 0.5.1"
 gem "devise", "~> 4.9"
+gem "enumerable-statistics", "~> 2.0"
 gem "faraday", "~> 2.12"
 gem "importmap-rails"
 gem "jbuilder"
